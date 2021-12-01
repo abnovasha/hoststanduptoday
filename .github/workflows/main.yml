@@ -33,8 +33,6 @@ jobs:
     - name: Display structure of downloaded files
       run: ls -R
       
-    - name: Notify
-    - uses: actions/checkout@master
     - name: Microsoft Teams Notification
       uses: skitionek/notify-microsoft-teams@master
       if: always()
