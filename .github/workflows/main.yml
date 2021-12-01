@@ -39,7 +39,6 @@ jobs:
       uses: skitionek/notify-microsoft-teams@master
       if: always()
       with:
-        webhook_url: ${MSTEAMS_WEBHOOK}
         raw: >-
           {
             "type": "message",
