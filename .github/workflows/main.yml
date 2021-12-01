@@ -34,33 +34,7 @@ jobs:
       run: ls -R
       
     - name: Microsoft Teams Notification
-      id: myRequest
-      uses: fjogeleit/http-request-action@master
+      uses: dhollerbach/github-action-send-message-to-ms-teams@1.0.10
       with:
-        url: https://awazecom.webhook.office.com/webhookb2/4066f229-ac2b-4f7b-9cc6-2ebafc044cf3@bd846b68-132a-4a46-b1e7-d090e168c0a2/IncomingWebhook/87770b6590d84faeac8f044b54510abc/02ca590e-3f0f-4642-8831-e7db786262a3
-        method: POST
-        customHeaders: "{'Content-Type':'application/json', 'Host':'awazecom.webhook.office.com', 'Content-Length':'633'}"
-        data: >-
-          {
-            "type": "message",
-            "attachments": [
-                {
-                    "contentType": "application/vnd.microsoft.card.adaptive",
-                    "contentUrl": null,
-                    "content": {
-                        "type": "AdaptiveCard",
-                        "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-                        "version": "1.4",
-                        "body": [
-                            {
-                              "type": "Image",
-                              "url": "./desktopPage600x450.*.jpeg",
-                              "horizontalAlignment": "Center"
-                            }
-                        ]
-                    }
-                }
-            ]
-          }
-    - name: Show Response
-      run: echo ${{ steps.myRequest.outputs.response }}
+        webhook: 'https://awazecom.webhook.office.com/webhookb2/4066f229-ac2b-4f7b-9cc6-2ebafc044cf3@bd846b68-132a-4a46-b1e7-d090e168c0a2/IncomingWebhook/87770b6590d84faeac8f044b54510abc/02ca590e-3f0f-4642-8831-e7db786262a3'
+        message: 'W00t it werked!'
