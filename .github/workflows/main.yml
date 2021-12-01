@@ -34,20 +34,12 @@ jobs:
       run: ls -R
       
     - name: Microsoft Teams Notification
-      uses: skitionek/notify-microsoft-teams@master
-      if: always()
+      uses: aliencube/microsoft-teams-actions@v0.8.0
       with:
-        webhook_url: https://awazecom.webhook.office.com/webhookb2/4066f229-ac2b-4f7b-9cc6-2ebafc044cf3@bd846b68-132a-4a46-b1e7-d090e168c0a2/IncomingWebhook/87770b6590d84faeac8f044b54510abc/02ca590e-3f0f-4642-8831-e7db786262a3
-        raw: >-
-          {
-            "type": "AdaptiveCard",
-                "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-                "version": "1.4",
-                "body": [
-                    {
-                        "type": "Image",
-                        "url": "https://www.mongolos.dk/",
-                        "horizontalAlignment": "Center"
-                    }
-                ]
-          }
+        webhook_uri: https://outlook.office.com/webhook/<GUID>/IncomingWebhook/<GUID>
+        title: <Message Title>
+        summary: <Message Summary>
+        text: <Message Text>
+        theme_color: <Message Theme Color>
+        sections: '[{ "activityTitle": "hello world" }]'
+        actions: '[{ "@type": "OpenUri", "name": "lorem ipsum", "targets": [{ "os": "default", "uri": "https://localhost" }] }]'
