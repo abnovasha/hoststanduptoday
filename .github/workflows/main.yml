@@ -34,10 +34,12 @@ jobs:
       run: ls -R
       
     - name: Microsoft Teams Notification
+      env:
+        MSTEAMS_WEBHOOK: "https://awazecom.webhook.office.com/webhookb2/4066f229-ac2b-4f7b-9cc6-2ebafc044cf3@bd846b68-132a-4a46-b1e7-d090e168c0a2/IncomingWebhook/87770b6590d84faeac8f044b54510abc/02ca590e-3f0f-4642-8831-e7db786262a3"
       uses: skitionek/notify-microsoft-teams@master
       if: always()
       with:
-        webhook_url: 'https://awazecom.webhook.office.com/webhookb2/4066f229-ac2b-4f7b-9cc6-2ebafc044cf3@bd846b68-132a-4a46-b1e7-d090e168c0a2/IncomingWebhook/87770b6590d84faeac8f044b54510abc/02ca590e-3f0f-4642-8831-e7db786262a3'
+        webhook_url: ${MSTEAMS_WEBHOOK}
         raw: >-
           {
             "type": "message",
