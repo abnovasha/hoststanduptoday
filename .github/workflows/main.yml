@@ -22,6 +22,11 @@ jobs:
       with:
         path: screenshots
         name: Download-screenshots
+    - uses: actions/download-artifact@v2
+      with:
+        name: Download-screenshots
+    - name: Display structure of downloaded files
+      run: ls -R
     - name: Notify
       env:
         GITHUB_EVENT_PATH: '{"type": "message","attachments": [{"contentType": "application/vnd.microsoft.card.adaptive", "contentUrl": null, "content": {"type": "AdaptiveCard","$schema": "http://adaptivecards.io/schemas/adaptive-card.json",                "version": "1.4",                "body": [                    {                        "type": "Image",                        "url": "https://www.mongolos.dk/",                        "horizontalAlignment": "Center"                    }                ]            }        }    ]}'
