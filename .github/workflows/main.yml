@@ -41,7 +41,7 @@ jobs:
         json: '{"type": "message","attachments": [{"contentType": "application/vnd.microsoft.card.adaptive", "contentUrl": null, "content": {"type": "AdaptiveCard","$schema": "http://adaptivecards.io/schemas/adaptive-card.json", "version": "1.4", "body": [{ "type": "Image", "url": "https://www.mongolos.dk/", "horizontalAlignment": "Center"}]}}]}'        
     - name: Notify
       env:
-        GITHUB_EVENT_PATH: './src/payload.json'
+        GITHUB_EVENT_PATH: 'payload.json'
       uses: davidwengier/PostAdaptiveCard@v1.0.0
       with:
         webhook_uri: 'https://awazecom.webhook.office.com/webhookb2/4066f229-ac2b-4f7b-9cc6-2ebafc044cf3@bd846b68-132a-4a46-b1e7-d090e168c0a2/IncomingWebhook/87770b6590d84faeac8f044b54510abc/02ca590e-3f0f-4642-8831-e7db786262a3'
