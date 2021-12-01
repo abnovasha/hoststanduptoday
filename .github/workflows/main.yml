@@ -1,8 +1,7 @@
 name: screenshots ci actions
 on:
-  push:
-    branches:
-    - master
+  schedule:
+    - cron: '1/1 * * * *'
 
 jobs:
   screenshots:
