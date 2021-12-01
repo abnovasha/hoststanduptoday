@@ -2,7 +2,7 @@ name: screenshots ci actions
 
 on:
   schedule:
-    - cron: '*/2 * * * *'
+    - cron: '*/10 * * * *'
 
 jobs:
   screenshots:
