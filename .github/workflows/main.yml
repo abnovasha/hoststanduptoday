@@ -23,7 +23,7 @@ jobs:
     
     - uses: actions/upload-artifact@v2
       with:
-        path: screenshots
+        path: screenshots/desktopPage600x450.*.jpeg
         name: Download-screenshots
     
     - uses: actions/download-artifact@v2
@@ -38,4 +38,4 @@ jobs:
       with:
         webhook_uri: https://awazecom.webhook.office.com/webhookb2/4066f229-ac2b-4f7b-9cc6-2ebafc044cf3@bd846b68-132a-4a46-b1e7-d090e168c0a2/IncomingWebhook/87770b6590d84faeac8f044b54510abc/02ca590e-3f0f-4642-8831-e7db786262a3
         summary: <Message Summary>
-        text: "![Alt text for the image](./home/runner/work/hoststanduptoday/hoststanduptoday/desktopPage600x450.*.jpeg)"
+        text: "![Alt text for the image](~/desktopPage600x450.*.jpeg)"
